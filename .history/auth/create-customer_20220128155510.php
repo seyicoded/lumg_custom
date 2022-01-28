@@ -14,7 +14,6 @@
     try {
         $plain_data = $_REQUEST['data'];
         $data = json_decode($plain_data, true);
-        print($plain_data);
         print_r($data);
         die('');
         $email = ($data->email);
