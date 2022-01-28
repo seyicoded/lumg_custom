@@ -1,18 +1,6 @@
 <?php
-    if( ($_REQUEST['consumer_key'] == null) && ($_REQUEST['consumer_secret'] == null) ){
-        return json_encode(
-            [
-                'status' => 'false',
-                'message' => 'consumer information is invalid'
-            ]
-        );
+    if( ($_REQUEST['consumer_key'] != null) && ($_REQUEST['consumer_secret'] != null) ){
 
-        die(json_encode(
-            [
-                'status' => 'false',
-                'message' => 'consumer information is invalid'
-            ]
-        ));
     }
 
     $consumer_key = $_REQUEST['consumer_key'];
