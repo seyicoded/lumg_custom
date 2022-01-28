@@ -40,7 +40,8 @@
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <webmaster@lumigrowgroup.com>' . "\r\n";
+    $headers .= 'From: <webmaster@example.com>' . "\r\n";
+    $headers .= 'Cc: myboss@example.com' . "\r\n";
 
     if(!mail($to,$subject,$message,$headers)){
         echo 'not sent';
