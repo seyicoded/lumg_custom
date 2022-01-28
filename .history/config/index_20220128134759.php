@@ -7,7 +7,7 @@
         public static $DB_PORT = 'localhost';
         
         public function database(){
-            return ( mysqli_connect(self::$DB_HOST, self::$DB_USERNAME, self::$DB_PASSWORD, self::$DB_DATABASE));
+            return ( mysqli_connect(self::$DB_HOST, self::$DB_USERNAME, self::$DB_PASSWORD));
         }
     }
 
