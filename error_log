@@ -1,0 +1,8 @@
+[28-Jan-2022 12:17:09 UTC] PHP Warning:  include(./env.php): failed to open stream: No such file or directory in /home/lumigrm/public_html/api/v1/config/index.php on line 2
+[28-Jan-2022 12:17:09 UTC] PHP Warning:  include(): Failed opening './env.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/lumigrm/public_html/api/v1/config/index.php on line 2
+[28-Jan-2022 12:17:09 UTC] PHP Notice:  Undefined variable: DB_HOST in /home/lumigrm/public_html/api/v1/config/index.php on line 5
+[28-Jan-2022 12:17:09 UTC] PHP Notice:  Undefined variable: DB_USERNAME in /home/lumigrm/public_html/api/v1/config/index.php on line 5
+[28-Jan-2022 12:17:09 UTC] PHP Notice:  Undefined variable: DB_PASSWORD in /home/lumigrm/public_html/api/v1/config/index.php on line 5
+[28-Jan-2022 12:17:10 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/lumigrm/public_html/api/v1/config/index.php on line 5
+[28-Jan-2022 12:17:10 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/lumigrm/public_html/api/v1/index.php on line 8
+[28-Jan-2022 12:17:10 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/lumigrm/public_html/api/v1/index.php on line 8
