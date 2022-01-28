@@ -66,17 +66,24 @@
         // echo mysqli_num_rows(mysqli_query($con, "SELECT * FROM wpdc_users"));
         $to = $email;
         $subject = "Account Activation Link";
-        $link = $_SERVER['SERVER_NAME']."verify?l=".base64_encode($email);
 
         $message = "
         <html>
         <head>
-        <title>$subject</title>
+        <title>HTML email</title>
         </head>
         <body>
-            <p>Click the link below to activate your account!</p>
-    
-            <a href='$link'>Click Here</a>
+        <p>This email contains HTML Tags!</p>
+        <table>
+        <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        </tr>
+        <tr>
+        <td>John</td>
+        <td>Doe</td>
+        </tr>
+        </table>
         </body>
         </html>
         ";
