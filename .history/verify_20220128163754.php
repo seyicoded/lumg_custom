@@ -11,7 +11,7 @@
 
     $data = json_decode($data['data'], true);
 
-    // prepare to send cURL request for registrations
+    // prepare to send cURL request for registration
     $curl = curl_init();
     $data = http_build_query($data);
     $secret = "ck_b2c5927c3fea3a23cf914e01bf804e752e0c0db4:cs_49b054091a69141a09f042b56ad40bb467205dd5";
