@@ -6,7 +6,6 @@
 
     include '../security.php';
     if(!$auth){
-        print_r($_REQUEST);
         die('');
         return '';
     }
