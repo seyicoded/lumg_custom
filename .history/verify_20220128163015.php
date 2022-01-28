@@ -1,0 +1,51 @@
+<?php 
+    // just simple auth
+    require './config/index.php';
+    $config = new config();
+    $con = $config->database();
+
+    $email = base64_decode($_REQUEST['l']);
+
+    // get data
+    $data = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM custom_holder_registration WHERE email = '$email'"));
+
+    $data = json_decode($data['data'], true);
+
+    // prepare to send cURL request for registration
+    $curl = curl_init();
+    $data = http_build_query($data);
+    $secret = "ck_b2c5927c3fea3a23cf914e01bf804e752e0c0db4:cs_49b054091a69141a09f042b56ad40bb467205dd5";
+
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://api.twilio.com/2010-04-01/Accounts/$twilio_SID/Messages.json",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS => $data,
+    CURLOPT_HTTPHEADER => array(
+        "Authorization: Basic $secret",
+        'Content-Type: application/x-www-form-urlencoded'
+    ),
+    ));
+
+    $sent = curl_exec($curl);
+
+    curl_close($send);
+    $res = json_decode($sent);
+
+        // print_r($res);
+
+    try{
+        if($res->code != null){
+            return true;
+        }else{
+            return false;
+        }
+    }catch(Exception $e){
+        return false;
+    }
+?>
