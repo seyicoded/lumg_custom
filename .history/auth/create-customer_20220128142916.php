@@ -18,6 +18,6 @@
     $msg = wordwrap($msg,70);
 
     // send email
-    mail("opadonuseyi01@gmail.com","My subject",$msg);
-
+    mail("someone@example.com","My subject",$msg);
+    
 ?>
