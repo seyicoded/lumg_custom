@@ -17,6 +17,16 @@
         // print($plain_data);
         // print_r($data);
         // die('');
+
+        if( isset($data->email) && isset($data->username) && isset($data->password) ){
+            print(json_encode(
+                [
+                    'status' => false,
+                    'message' => 'please ensure to send all perimeter, email, username, password'
+                ]
+            ));
+        }
+
         $email = ($data->email);
         $username = ($data->username);
         $password = ($data->password);
