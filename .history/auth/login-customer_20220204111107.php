@@ -17,19 +17,7 @@
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
-        $status = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM custom_holder_registration WHERE email='$email'"))['status'];
-        $status = intval($status);
-
-        if($status == 0){
-            print(json_encode(
-                [
-                    'status' => true,
-                    'message' => 'Account not validated',
-                    'confirmed' => false
-                ]
-            ));
-            return '';
-        }
+        $status = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM custom_holder_registration WHERE email='$email'"));
 
         $secret = "ck_a29a5355edcfbff00f840e2cf3f0821b9671c212:cs_a5bbfeb37ff90d2f41461914209b5f4bcb661c02";
 

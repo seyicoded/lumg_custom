@@ -23,9 +23,8 @@
         if($status == 0){
             print(json_encode(
                 [
-                    'status' => true,
-                    'message' => 'Account not validated',
-                    'confirmed' => false
+                    'status' => false,
+                    'message' => 'account not found'
                 ]
             ));
             return '';
