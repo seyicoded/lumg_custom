@@ -1,0 +1,27 @@
+{
+    "remotePath": "./",
+    "host": "ip-64-202-190-206.ip.secureserver.net",
+    "username": "lumigrowgroup_custom@lumigrowgroup.com",
+    "password": "Welcome1$$$$",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}
