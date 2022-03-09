@@ -1,0 +1,29 @@
+<?php
+    require '../config/index.php';
+    $config = new config();
+    $con = $config->database();
+
+    include '../security.php';
+    if(!$auth){
+        die('');
+        return '';
+    }
+
+    // try to add new record into dB
+    $email = $_REQUEST['email'];
+    $title = $_REQUEST['title'];
+    $content = $_REQUEST['content'];
+    $desc = $_REQUEST['desc'];
+
+    $status = mysqli_query($con, "INSERT INTO noti_holder(email, title, content, desc) VALUES('$email', '$title', '$content', '$desc')");
+
+    if($status){
+        print(json_encode(
+            [
+                'status' => true,
+                'message' => 'Added Successfully'
+            ]
+        ));
+        return '';
+    }
+?>
