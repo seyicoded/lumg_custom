@@ -1,0 +1,18 @@
+{
+    "sourceFile": "history/get.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1646956274650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1646956274650,
+            "name": "Commit-0",
+            "content": "<?php\n    require '../config/index.php';\n    $config = new config();\n    $con = $config->database();\n\n    include '../security.php';\n    if(!$auth){\n        die('');\n        return '';\n    }\n\n    // try to add new record into dB\n    $email = $_REQUEST['email'];\n\n    $result = mysqli_query($con, \"SELECT * FROM trans_history WHERE email='$email'\");\n    $result_count = mysqli_num_rows($result);\n    $data = [];\n    for($i =0 ; $i < $result_count; $i++){\n        $data[$i] = mysqli_fetch_array($result);\n    }\n\n    try {\n        // mysqli_query($con, \"UPDATE noti_holder SET status = 1 WHERE email = '$email'\");\n    } catch (\\Throwable $th) {\n        //throw $th;\n    }\n\n    if(true){\n        print(json_encode(\n            [\n                'status' => true,\n                'message' => 'Gotten Successfully',\n                'data' => json_encode($data),\n                'count' => $result_count\n            ]\n        ));\n        return '';\n    }\n?>"
+        }
+    ]
+}

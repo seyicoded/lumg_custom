@@ -1,0 +1,18 @@
+{
+    "sourceFile": "history/holder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1646956230426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1646956230426,
+            "name": "Commit-0",
+            "content": "<?php\n    require '../config/index.php';\n    $config = new config();\n    $con = $config->database();\n\n    include '../security.php';\n    if(!$auth){\n        die('');\n        return '';\n    }\n\n    // try to add new record into dB\n    $email = $_REQUEST['email'];\n    $order_id = $_REQUEST['order_id'];\n    $desc = $_REQUEST['desc'];\n    $price = $_REQUEST['price'];\n    $status = $_REQUEST['status'];\n\n    $status = mysqli_query($con, \"INSERT INTO trans_history(order_id, email, h_desc, price, status) VALUES('$order_id', '$email', '$desc', '$price', '$status')\");\n\n    if($status){\n        print(json_encode(\n            [\n                'status' => true,\n                'message' => 'Added Successfully'\n            ]\n        ));\n        return '';\n    }else{\n        print(json_encode(\n            [\n                'status' => false,\n                'message' => 'Failed Successfully',\n                'error' => mysqli_error($con)\n            ]\n        ));\n        return '';\n    }\n?>"
+        }
+    ]
+}
