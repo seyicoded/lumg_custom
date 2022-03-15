@@ -30,7 +30,7 @@
             [
                 'status' => true,
                 'message' => 'Gotten Successfully',
-                'data' => json_encode($data),
+                'data' => ($data),
                 'count' => $result_count
             ]
         ));
